@@ -1,14 +1,14 @@
 (function($) {
   soundManager.onready(function() {
     $("#mixer input.on-off").change(function(){
-      channel = $(this).parents("li").attr("id")
-      sound = mixboy.store.getChannel(channel);
-      $(this).is(":checked") == true ? sound.play() : sound.pause();
+      var channel = $(this).parents("li").attr("id");
+      var sound = mixboy.store.getChannel(channel);
+      $(this).is(":checked") === true ? sound.play() : sound.pause();
     });
 
     $("#mixer input.song").change(function(){
-      root = $(this).parents("ul").parents("li")
-      channel = root.attr("id");
+      var root = $(this).parents("ul").parents("li");
+      var channel = root.attr("id");
 
       soundManager.destroySound(channel);
       window.mixboy.store.set(channel, {
@@ -21,8 +21,8 @@
     });
 
     $("#mixer input.volume").change(function(){
-      root = $(this).parents("ul").parents("li")
-      channel = root.attr("id");
+      var root = $(this).parents("ul").parents("li");
+      var channel = root.attr("id");
       var song = soundManager.getSoundById(channel);
       song.setVolume($(this).val());
     });
