@@ -1,6 +1,7 @@
 (function($) {
   soundManager.onready(function() {
     soundManager.defaultOptions.whileplaying = window.mixboy.showInfo;
+    soundManager.defaultOptions.onplay = window.mixboy.onplay;
 
     $("#mixer input.on-off").change(function(){
       var root = $(this).parents("li")
@@ -9,21 +10,18 @@
 
       isChecked = $(this).is(":checked") === true
       isChecked ? sound.play() : sound.pause();
-
-      root.find("progress").toggle(isChecked);
     });
 
     $("#mixer input.song").change(function(){
       var root = $(this).parents("ul").parents("li");
       var channel = root.attr("id");
-
       soundManager.destroySound(channel);
       window.mixboy.store.set(channel, {
         id: channel,
         url: $(this).val(),
         stream: true
       });
-
+      window.mixboy.keys[root.attr("rel")] = channel
       root.find(".on-off").trigger("change");
     });
 
