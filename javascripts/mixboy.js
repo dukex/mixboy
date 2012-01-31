@@ -15,7 +15,16 @@ var mixboy = {
     _keyHandler: function(e) {
       var oEvt = e?e:event;
       var sChar = String.fromCharCode(oEvt.keyCode).toLowerCase();
-      if (typeof mixboy.keys[sChar] != 'undefined') soundManager.play(mixboy.keys[sChar]);
+
+      if (typeof mixboy.keys[sChar] != 'undefined'){
+		var song = soundManager.getSoundById(mixboy.keys[sChar]);
+
+		if(song.playState === 0 || song.paused === true){
+			song.play();
+		}else if(song.playState === 1 && song.paused === false){
+			song.pause();
+		}
+      }
     }
 };
 
