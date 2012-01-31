@@ -1,0 +1,42 @@
+#mixer ol#channel {
+  list-style: none;
+  margin: 20px;
+}
+
+#mixer ol#channel > li{
+  margin: 0 0 20px;
+  padding: 5px;
+  border: 1px solid #EEE;
+  background-color: #F7F7F7;
+}
+
+#mixer li label{
+  padding: 0;
+  text-align: left;
+  font-size: 25px;
+  line-height: 25px;
+}
+
+#mixer li .config{
+  margin: 0;
+  padding: 10px 0;
+  clear: both;
+}
+
+#mixer li .config li{
+  display: block;
+  margin: 0 0 10px;
+}
+
+#mixer li .config label{
+  padding: 5px 5px 0;
+  text-align: right;
+  font-size: 15px;
+  line-height: 25px;
+}
+#mixer li .config input{
+  padding: 5px 15px;
+  width: 300px;
+  height: auto;
+  font-size: 20px;
+}
