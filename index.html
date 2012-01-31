@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>MixBoy</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+  <script src="javascripts/soundmanager2.js"></script>
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/mixboy.js"></script>
+  <script src="javascripts/mixboy.mixer.js"></script>
+  <script type="text/javascript">
+    soundManager.useHTML5Audio = true;
+    soundManager.preferFlash = false;
+    soundManager.debugMode = true;
+  </script>
+</head>
+<body>
+  <div id="mixer" class="container">
+    <ol>
+      <li class="channel">
+        <label for="channel-1">Back Track - Athlete</label>
+        <input type="checkbox" id="channel-1" />
+        <time>
+          <span class="current"></span>
+          <span class="total"></span>
+        </time>
+      </li>
+      <li class="channel">
+        <label for="channel-2">Please Mr. Postman - The Marvelettes</label>
+        <input type="checkbox" id="channel-2" />
+        <time>
+          <span class="current"></span>
+          <span class="total"></span>
+        </time>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
