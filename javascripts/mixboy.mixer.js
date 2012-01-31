@@ -1,26 +1,31 @@
 (function($) {
-	soundManager.onready(function() {
-		mixer = {}
+  soundManager.onready(function() {
+    $("#mixer input.on-off").change(function(){
+      channel = $(this).parents("li").attr("id")
+      sound = mixboy.store.getChannel(channel);
+      $(this).is(":checked") == true ? sound.play() : sound.pause();
+    });
 
-		mixer["channel-1"] = soundManager.createSound({
-		  id: 'channel-1',
-		  url: 'audio/BackTrack.mp3',
-		  stream: true,
-		  whileplaying: mixboy.showInfo
-		});
+    $("#mixer input.song").change(function(){
+      channel = $(this).parents("li").attr("id");
 
-		mixer["channel-2"] = soundManager.createSound({
-		  id: 'channel-2',
-		  url: 'audio/PleaseMrPostman.mp3',
-		  stream: true,
-		  whileplaying: mixboy.showInfo
-		});
+      soundManager.destroySound(channel);
+      window.mixboy.store.set(channel, {
+        id: channel,
+        url: $(this).val(),
+        stream: true
+      });
 
-		$("#mixer input").change(function(){
-     		sound = mixboy.mixer[$(this).attr("id")];
-      		$(this).is(":checked") == true ? sound.play() : sound.pause();
-    	});
+      $(this).parents("li").find(".on-off").trigger("change");
+    });
 
-    	window.mixboy.mixer = mixer
-	});
+    $("#mixer input.volume").change(function(){
+      channel = $(this).parents("li").attr("id");
+      var song = soundManager.getSoundById(channel);
+      song.setVolume($(this).val());
+    });
+
+    $("#mixer input.song").trigger("change");
+    window.mixboy.mixer = mixer;
+  });
 })(jQuery);
