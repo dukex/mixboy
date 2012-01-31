@@ -16,23 +16,23 @@
 </head>
 <body>
   <div id="mixer" class="container">
-    <ol>
+    <ol id="channel">
       <li class="channel" id="channel-1">
         <label for="channel-1-on-off">Channel 1</label>
         <input type="checkbox" class="on-off" id="channel-1-on-off" />
-        <div id="channel-1-config" class="config">
-          <input value="audio/BackTrack.mp3" class="song" id="channel-1-song" />
-          <input value="100" class="volume" id="channel-1-volume" />
-        </div>
+        <ul id="channel-1-config" class="config">
+          <li><label for="channel-1-song">Track</label><input value="audio/BackTrack.mp3" class="song" id="channel-1-song" /></li>
+          <li><label for="channel-1-volume">Volume</label><input value="100" class="volume" id="channel-1-volume" /></li>
+        </ul>
       </li>
       <li class="channel" id="channel-2">
         <label for="channel-2-on-off">Channel 2</label>
         <input type="checkbox" class="on-off" id="channel-2-on-off" />
 
-        <div id="channel-2-config" class="config">
-          <input value="audio/PleaseMrPostman.mp3" class="song" id="channel-2-song" />
-          <input value="100" class="volume" id="channel-2-volume" />
-        </div>
+        <ul id="channel-2-config" class="config">
+          <li><label for="channel-2-song">Track</label><input value="audio/PleaseMrPostman.mp3" class="song" id="channel-2-song" /></li>
+          <li><label for="channel-2-volume">Volume</label><input value="100" class="volume" id="channel-2-volume" /></li>
+        </ul>
       </li>
     </ol>
   </div>
