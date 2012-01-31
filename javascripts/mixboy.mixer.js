@@ -1,7 +1,10 @@
 (function($) {
   soundManager.onready(function() {
-    soundManager.defaultOptions.whileplaying = window.mixboy.showInfo;
-    soundManager.defaultOptions.onplay = window.mixboy.onplay;
+    soundManager.defaultOptions = {
+      whileplaying: window.mixboy.showInfo,
+      onplay: window.mixboy.onplay,
+      onpause: window.mixboy.onpause
+    }
 
     $("#mixer input.on-off").change(function(){
       var root = $(this).parents("li")

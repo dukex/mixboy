@@ -9,8 +9,12 @@ var mixboy = {
 	onplay: function(){
 		console.log(this)
       	var root = $('#'+this.sID);
-		root.find("progress").toggle();
+		root.find("progress").show();
+	},
+	onpause: function(){
+		var root = $('#'+this.sID);
 
+		root.find(".on-off").attr("checked", false)
 	},
     _keyHandler: function(e) {
       var oEvt = e?e:event;
