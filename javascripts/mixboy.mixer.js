@@ -1,9 +1,14 @@
 (function($) {
   soundManager.onready(function() {
     $("#mixer input.on-off").change(function(){
-      var channel = $(this).parents("li").attr("id");
+      var root = $(this).parents("li")
+      var channel = root.attr("id");
       var sound = mixboy.store.getChannel(channel);
-      $(this).is(":checked") === true ? sound.play() : sound.pause();
+
+      isChecked = $(this).is(":checked") === true
+      isChecked ? sound.play() : sound.pause();
+
+      root.find("progress").toggle(isChecked);
     });
 
     $("#mixer input.song").change(function(){

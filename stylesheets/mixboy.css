@@ -9,7 +9,9 @@
   border: 1px solid #EEE;
   background-color: #F7F7F7;
 }
-
+#mixer li progress{
+  display: none;
+}
 #mixer li label{
   padding: 0;
   text-align: left;

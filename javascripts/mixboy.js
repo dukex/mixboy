@@ -1,8 +1,8 @@
 var mixboy = {
-	showInfo: function (info) {
-		var sound_container = $("#"+this.sID).parent();
-		sound_container.find("time .current").html(this.position);
-		sound_container.find("time .total").html(this.duration);
+	showInfo: function () {
+		var root = $('#'+this.sID);
+		var progress = (this.position * 100)/this.duration;
+		root.find("progress").attr("value", progress);
 	}
 };
 
