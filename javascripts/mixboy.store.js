@@ -1,7 +1,7 @@
 (function($) {
   var store = {
     getChannel: function(channel){
-      return soundManager.createSound($.extend({whileplaying: window.mixboy.showInfo},this.get(channel)));
+      return soundManager.createSound(this.get(channel));
     },
     set: function(key, value){
       return localStorage.setItem(key, this.serialize(value));

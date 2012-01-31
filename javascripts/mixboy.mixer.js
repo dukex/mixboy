@@ -1,5 +1,7 @@
 (function($) {
   soundManager.onready(function() {
+    soundManager.defaultOptions.whileplaying = window.mixboy.showInfo;
+
     $("#mixer input.on-off").change(function(){
       var root = $(this).parents("li")
       var channel = root.attr("id");
