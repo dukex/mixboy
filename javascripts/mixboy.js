@@ -24,7 +24,8 @@ var mixboy = {
         song.play();
         window.mixboy.store.set("status-channel-"+sChar, {withShift: oEvt.shiftKey})
       } else {
-        withShift = window.mixboy.store.get("status-channel-"+sChar).withShift
+        statusChannel = window.mixboy.store.get("status-channel-"+sChar)
+        withShift = statusChannel && statusChannel.withShift
         if(!withShift){
           song.stop();
           window.mixboy.store.set("status-channel-"+sChar, {withShift: oEvt.shiftKey})
