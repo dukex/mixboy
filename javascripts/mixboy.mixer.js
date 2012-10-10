@@ -3,7 +3,8 @@
     soundManager.defaultOptions = {
       whileplaying: window.mixboy.showInfo,
       onplay: window.mixboy.onplay,
-      onpause: window.mixboy.onpause
+      onpause: window.mixboy.onpause,
+      autoLoad: true
     }
 
     $("#mixer input.on-off").change(function(){
