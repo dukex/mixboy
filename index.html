@@ -4,40 +4,65 @@
   <link rel="stylesheet" href="stylesheets/bootstrap.css">
   <link rel="stylesheet" href="stylesheets/mixboy.css">
   <script src="javascripts/soundmanager2.js"></script>
+  <script src="javascripts/underscore.js"></script>
   <script src="javascripts/json2.js"></script>
   <script src="javascripts/jquery.js"></script>
   <script src="javascripts/mixboy.js"></script>
   <script src="javascripts/mixboy.store.js"></script>
   <script src="javascripts/mixboy.mixer.js"></script>
+
   <script type="text/javascript">
     soundManager.useHTML5Audio = true;
     soundManager.preferFlash = false;
     soundManager.waitForWindowLoad = true;
-    soundManager.debugMode = true;
+    soundManager.debugMode = false;
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+      var _mixer = [
+        {channel: "1", name: "1", track: "audio/base16.mp3"},
+        {channel: "2", name: "2", track: "audio/batidao4.mp3"},
+        {channel: "3", name: "3", track: "audio/base03.mp3"},
+        {channel: "4", name: "4", track: ""},
+        {channel: "q", name: "Q", track: "audio/CasteloEmChamas.wav"},
+        {channel: "w", name: "W", track: "audio/treinamentodobumbum.wav"},
+        {channel: "e", name: "E", track: "audio/vaisenta.wav"},
+        {channel: "r", name: "R", track: ""},
+        {channel: "a", name: "A", track: "audio/basedetecnobrega.mp3"},
+        {channel: "s", name: "S", track: ""},
+        {channel: "d", name: "D", track: "audio/BackTrack.mp3"},
+        {channel: "f", name: "F", track: "audio/PleaseMrPostman.mp3"},
+      ];
+      _.each(_mixer, function(channel){
+        var template = _.template($("#channel-template").html());
+        $("#channel").append(template(channel));
+      });
+    });
   </script>
 </head>
 <body>
   <div id="mixer" class="container">
+    <h1 id=""> Mixboy by <strong>Duke<span>x</span></strong></h1>
     <ol id="channel">
-      <li class="channel" id="channel-1" rel="1">
-        <label for="channel-1-on-off">Channel 1</label>
-        <input type="checkbox" class="on-off" id="channel-1-on-off" />
-        <progress value="0" max="100"></progress>
-        <ul id="channel-1-config" class="config">
-          <li><label for="channel-1-song">Track</label><input value="audio/BackTrack.mp3" class="song" id="channel-1-song" /></li>
-          <li><label for="channel-1-volume">Volume</label><input value="50" min="0" max="100" type="range" class="volume" id="channel-1-volume" /></li>
-        </ul>
-      </li>
-      <li class="channel" id="channel-2" rel="2">
-        <label for="channel-2-on-off">Channel 2</label>
-        <input type="checkbox" class="on-off" id="channel-2-on-off" />
-        <progress value="0" max="100"></progress>
-        <ul id="channel-2-config" class="config">
-          <li><label for="channel-2-song">Track</label><input value="audio/PleaseMrPostman.mp3" class="song" id="channel-2-song" /></li>
-          <li><label for="channel-2-volume">Volume</label><input value="50" min="0" max="100" type="range" class="volume" id="channel-2-volume" /></li>
-        </ul>
-      </li>
     </ol>
+    <p>
+      click on keyboard the channel name key play and stop music, like pusk'n talk
+    </p><p>
+      click on keyboard the channel name key with shift and play music on background
+    </p>
+
+    <script id="channel-template" type="template/undescore">
+      <li class="channel" id="channel-<%= channel %>" rel="<%= channel %>">
+        <input type="checkbox" class="on-off" id="channel-<%= channel %>-on-off" />
+        <label for="channel-<%= channel %>-on-off"> <%= name %></label>
+        <ul id="channel-<%= channel %>-config" class="config">
+          <li><input value="<%= track %>" class="song" id="channel-<%= channel %>-song" /></li>
+          <li><label for="channel-<%= channel %>-volume">Volume</label><input value="50" min="0" max="100" type="range" class="volume" id="channel-<%= channel %>-volume" /></li>
+        </ul>
+        <progress value="0" max="100"></progress>
+      </li>
+    </script>
   </div>
 </body>
 </html>
