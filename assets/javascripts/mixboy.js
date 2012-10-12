@@ -45,6 +45,7 @@ var mixboy = {
   }
 };
 
-window.mixboy = mixboy;
-document.onkeydown = mixboy._keyHandler;
-document.onkeyup = mixboy._keyHandler;
+$(document).ready(function(){
+  window.mixboy = mixboy;
+  $(document).live("keydown keyup", mixboy._keyHandler)
+});
