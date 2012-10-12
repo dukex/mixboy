@@ -26,9 +26,12 @@ var mixboy = {
       } else {
         statusChannel = window.mixboy.store.get("status-channel-"+sChar)
         withShift = statusChannel && statusChannel.withShift
-        if(!withShift){
+        toPause = oEvt.ctrlKey
+        if(!withShift && !toPause){
           song.stop();
           window.mixboy.store.set("status-channel-"+sChar, {withShift: oEvt.shiftKey})
+        } else if(toPause){
+          song.pause();
         }
       }
       $("#channel-"+sChar+"-on-off").attr("checked", !!song.playState)
