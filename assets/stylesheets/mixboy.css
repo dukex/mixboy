@@ -79,7 +79,7 @@ h1 strong span {
   line-height: 16px;
 }
 #mixer li .config input{
-  padding: 2px 5px;
+  padding: 0 5px;
   width: 100px;
   height: auto;
   font-size: 10px;

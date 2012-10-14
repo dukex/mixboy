@@ -12,7 +12,7 @@
       sound = mixboy.store.getChannel(channel)
 
       isChecked = $(this).is(":checked") is on
-      if isChecked then sound.play() else sound.pause()
+      if isChecked then sound.play() else sound.stop()
 
     $("#mixer input.song").change ->
       root = $(this).parents("ul").parents("li")
