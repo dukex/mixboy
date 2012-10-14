@@ -1,7 +1,7 @@
-//= require soundmanager2
-//= require underscore
-//= require json2
-//= require jquery
+//= require vendor/soundmanager2
+//= require vendor/underscore
+//= require vendor/json2
+//= require vendor/jquery
 //= require mixboy
 //= require mixboy.store
 //= require mixboy.mixer
