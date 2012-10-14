@@ -1,5 +1,5 @@
 .container{
-  width: 770px;
+  width: 1002px;
   margin-top: 20px;
 }
 
@@ -13,39 +13,48 @@ h1 strong span {
   vertical-align: text-top;
 }
 #mixer ol#channel {
+  padding: 5px 0 0;
   list-style: none;
-  margin: 20px;
+  margin: 0px;
+  width: 570px;
+  overflow: hidden;
 }
 
 #mixer ol#channel > li{
-  margin: 20px 10px;
+  border-radius: 2px;
+  margin: 20px 5px;
   margin-top: 0;
   padding: 5px;
-  border: 1px solid #EEE;
+  border: 1px solid #DDD;
   background-color: #F7F7F7;
-  width: 150px;
-  height: 135px;
+  width: 120px;
+  height: 100px;
   float: left
 }
 
 
 #mixer li progress{
   display: none;
-  width: 95px;
+  width: 100%;
 }
 #mixer li label{
   padding: 0;
   text-align: left;
-  font-size: 16px;
-  line-height: 15px;
+  font-size: 12px;
+  line-height: 12px;
   width: auto;
+}
+#mixer li label.key{
+  text-align: right;
+  float: right;
 }
 #mixer li input[type=checkbox]{
   float: left;
   -webkit-appearance: none;
+  margin: 0;
   margin-right: 5px;
   background: #CCC;
-  padding: 4px;
+  padding: 3px;
 }
 
 #mixer li input[type=checkbox]:checked{
@@ -60,18 +69,18 @@ h1 strong span {
 
 #mixer li .config li{
   display: block;
-  margin: 0 0 5px;
+  margin: 0;
 }
 
 #mixer li .config label{
   padding: 5px 0 0;
   text-align: left;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 16px;
 }
 #mixer li .config input{
   padding: 2px 5px;
-  width: 100%;
+  width: 100px;
   height: auto;
   font-size: 10px;
 }
