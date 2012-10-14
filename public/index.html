@@ -14,18 +14,22 @@
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function(){
       var _mixer = [
-        {channel: "1", name: "1", track: "audio/base16.mp3"},
-        {channel: "2", name: "2", track: "audio/batidao4.mp3"},
-        {channel: "3", name: "3", track: "audio/base03.mp3"},
-        {channel: "4", name: "4", track: ""},
-        {channel: "q", name: "Q", track: "audio/CasteloEmChamas.wav"},
-        {channel: "w", name: "W", track: "audio/treinamentodobumbum.wav"},
-        {channel: "e", name: "E", track: "audio/vaisenta.wav"},
-        {channel: "r", name: "R", track: ""},
-        {channel: "a", name: "A", track: "audio/basedetecnobrega.mp3"},
-        {channel: "s", name: "S", track: ""},
-        {channel: "d", name: "D", track: "audio/BackTrack.mp3"},
-        {channel: "f", name: "F", track: "audio/PleaseMrPostman.mp3"},
+        {channel: "1", key: "1",name: "", track: "audio/treinamentodobumbum.wav"},
+        {channel: "2", key: "2",name: "", track: "audio/corneta.mp3"},
+        {channel: "3", key: "3",name: "", track: "audio/basefunk0.mp3"},
+        {channel: "4", key: "4",name: "", track: "audio/basefunk1.mp3"},
+        {channel: "q", key: "q",name: "", track: "audio/basefunk2.mp3"},
+        {channel: "w", key: "w",name: "", track: "audio/LoopItaliafoda.wav"},
+        {channel: "e", key: "e",name: "", track: ""},
+        {channel: "r", key: "r",name: "", track: ""},
+        {channel: "a", key: "a",name: "", track: ""},
+        {channel: "s", key: "s",name: "", track: ""},
+        {channel: "d", key: "d",name: "", track: "audio/ELAETOP.mp3"},
+        {channel: "f", key: "f",name: "", track: "audio/basedetecnobrega.mp3"},
+        {channel: "z", key: "z",name: "", track: ""},
+        {channel: "x", key: "x",name: "", track: ""},
+        {channel: "c", key: "c",name: "", track: ""},
+        {channel: "v", key: "v",name: "", track: ""},
       ];
       _.each(_mixer, function(channel){
         var template = _.template($("#channel-template").html());
@@ -39,14 +43,13 @@
     <h1 id=""> Mixboy by <strong>Duke<span>x</span></strong></h1>
     <ol id="channel">
     </ol>
-    <p>
-      Use SHIFT to set song
-    </p>
+    <div id="lcd">
+    </div>
 
     <script id="channel-template" type="template/undescore">
       <li class="channel" id="channel-<%= channel %>" rel="<%= channel %>">
         <input type="checkbox" class="on-off" id="channel-<%= channel %>-on-off" />
-        <label for="channel-<%= channel %>-on-off"> <%= name %></label>
+        <label for="channel-<%= channel %>-on-off" class="key"> <%= key %></label>
         <ul id="channel-<%= channel %>-config" class="config">
           <li><input value="<%= track %>" class="song" id="channel-<%= channel %>-song" /></li>
           <li><label for="channel-<%= channel %>-volume">Volume</label><input value="50" min="0" max="100" type="range" class="volume" id="channel-<%= channel %>-volume" /></li>
