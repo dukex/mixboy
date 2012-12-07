@@ -15,6 +15,11 @@ mixboy =
     root = $('#'+this.sID)
     root.find(".on-off").attr("checked", false)
 
+  whileloading: ()->
+    root = $('#'+this.sID)
+    progress = (this.bytesLoaded * 100)/this.bytesTotal
+    root.find("progress").attr("value", progress).show()
+
   _keyHandler: (e)->
     oEvt = if e then e else event
     sChar = String.fromCharCode(oEvt.keyCode).toLowerCase()
