@@ -61,3 +61,7 @@ Write your code and push to origin
 $ git push origin your-branch-name
 ```
 Enter on http://github.com/your-github-name/mixboy and click in **Pull Request**
+
+## Contribuidores
+* Duke
+* Antonio

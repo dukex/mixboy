@@ -34,7 +34,6 @@ h1 strong span {
 
 
 #mixer li progress{
-  display: none;
   width: 100%;
 }
 #mixer li label{
